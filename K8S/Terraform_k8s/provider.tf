@@ -1,5 +1,5 @@
 provider "google"{
-    credentials=file("/home/raghu/terraform-key.json")
+    credentials=file("~/keys/terra.json")
     project = var.project
     region = var.region
     zone = var.zone
