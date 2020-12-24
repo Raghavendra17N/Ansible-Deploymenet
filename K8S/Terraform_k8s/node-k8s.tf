@@ -27,6 +27,6 @@ resource "google_compute_instance" "node-k8s"{
         command = "echo [k8s_worker] >> ../Inventory/inventory.txt"
     }
     provisioner "local-exec"{
-        command = "echo node ansible_ssh_host=${google_compute_instance.node-k8s.network_interface.0.access_config.0.nat_ip} >> /tmp/Ansible/Main-Devops-Ansible/K8S/Inventory/inventory.txt"
+        command = "echo node ansible_ssh_host=${google_compute_instance.node-k8s.network_interface.0.access_config.0.nat_ip} >> ../Inventory/inventory.txt"
     }
 }
