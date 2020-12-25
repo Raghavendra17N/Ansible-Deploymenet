@@ -29,9 +29,6 @@ resource "google_compute_instance" "master-k8s"{
         #command = "echo [k8s_master] >> ../Inventory/inventory.txt"
    # }
     provisioner "local-exec" {
-        command = "cat ../Inventory/inventory.txt << EOF
-         [k8s_master]
-         master ansible_ssh_host=${google_compute_instance.master-k8s.network_interface.0.access_config.0.nat_ip}
-         EOF"
+        command = "echo master ansible_ssh_host=${google_compute_instance.master-k8s.network_interface.0.access_config.0.nat_ip}  >> ../Inventory/inventory.txt"
     }
 }
