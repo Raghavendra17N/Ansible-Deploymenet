@@ -14,5 +14,5 @@ else
   sudo apt install ansible -y 
 fi
 mkdir -p /etc/ansible/group_vars
-sudo cp Inventory/group_vars/k8s_master.txt /etc/ansible/group_vars/k8s_master
-sudo cp Inventory/group_vars/k8s_worker.txt /etc/ansible/group_vars/k8s_worker
+sudo cp K8S/Inventory/group_vars/k8s_master.txt /etc/ansible/group_vars/k8s_master
+sudo cp K8S/Inventory/group_vars/k8s_worker.txt /etc/ansible/group_vars/k8s_worker
