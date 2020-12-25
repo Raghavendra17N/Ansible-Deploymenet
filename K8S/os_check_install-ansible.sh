@@ -1,4 +1,5 @@
 source /etc/os-release
+echo "$PWD"
 os_vendor=`echo $ID`
 if [ "$os_vendor" = "centos" ]
   then
