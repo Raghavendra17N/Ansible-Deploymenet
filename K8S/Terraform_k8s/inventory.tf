@@ -8,7 +8,7 @@ resource "null_resource" "master-grp" {
         order = "${google_compute_instance.master-k8s.name}"
     }
     provisioner "local-exec"{
-       command = "echo [k8s_master] >> inventory"
+       command = "echo [k8s_master] >> ../Inventory/inventory.txt"
    }
 }
 resource "null_resource" "master-ip"{
