@@ -17,7 +17,7 @@ resource "null_resource" "master-ip"{
     }
     provisioner "local-exec"{
 
-        command = "echo ${google_compute_instance.master-k8s.name} ansible_host=${google_compute_instance.master-k8s.network_interface.0.access_config.0.nat_ip} >> ../Inventory/inventory.txt"
+        command = "echo ${google_compute_instance.master-k8s.name} ansible_host=${google_compute_instance.master-k8s.network_interface.0.access_config.0.nat_ip} ansible_python_interpreter=/usr/bin/python3 >> ../Inventory/inventory.txt"
     }
 }
 resource "null_resource" "worker-grp" {
@@ -34,6 +34,6 @@ resource "null_resource" "worker-ip"{
     }
     provisioner "local-exec"{
 
-        command = "echo ${google_compute_instance.node-k8s.name} ansible_host=${google_compute_instance.node-k8s.network_interface.0.access_config.0.nat_ip} >> ../Inventory/inventory.txt"
+        command = "echo ${google_compute_instance.node-k8s.name} ansible_host=${google_compute_instance.node-k8s.network_interface.0.access_config.0.nat_ip} ansible_python_interpreter=/usr/bin/python3 >> ../Inventory/inventory.txt"
     }
 }
